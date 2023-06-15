@@ -1,4 +1,6 @@
 import React , { useState } from 'react';
+import './Navbar.css';
+
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -19,7 +21,7 @@ const themeNavbar = createTheme({
       MuiAppBar: {
         styleOverrides: {
           root: {
-            backgroundColor: 'black',
+            backgroundColor: 'transparent',
             boxShadow: 'none',
           },
         },
@@ -125,6 +127,7 @@ const Navbar = () => {
                             <Button
                                 key={page}
                                 onClick={handleCloseNavMenu}
+                                className="hover-effect-navbar"
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
                                 {page}
