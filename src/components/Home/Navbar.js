@@ -21,8 +21,10 @@ const themeNavbar = createTheme({
       MuiAppBar: {
         styleOverrides: {
           root: {
+            top: 0,
             backgroundColor: 'transparent',
             boxShadow: 'none',
+            position: 'fixed'
           },
         },
       },

@@ -1,5 +1,4 @@
 import React , { useEffect } from 'react';
-import Navbar from './Navbar';
 import { styled  } from '@mui/system';
 import homeBackground from '../../assets/home_background.jpg';
 import Typography from '@mui/material/Typography';
@@ -17,7 +16,6 @@ const Background1 = styled('div')({
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
-  backgroundAttachment: 'fixed',
 });
 
 const themeH1MiddleTypo = createTheme({
@@ -27,10 +25,12 @@ const themeH1MiddleTypo = createTheme({
         root: {
           mr: 2,
           color: 'white',
-          alignItems: 'flexStart',
+          fontWeight: '700',
+          display: 'flex',
+          flexDirection: 'row',
           justifyContent: 'center',
-          height: 'auto',
-          fontWeight: '700'
+          alignItems: 'center',
+          height: '100vh',
         },
       },
     },
@@ -44,9 +44,12 @@ const themeH1MiddleTypoSM = createTheme({
         root: {
           mr: 2,
           color: 'white',
-          alignItems: 'flexStart',
+          fontWeight: '700',
+          display: 'flex',
+          flexDirection: 'row',
           justifyContent: 'center',
-          fontWeight: '700'
+          alignItems: 'center',
+          height: '100vh',
         },
       },
     },
@@ -65,24 +68,16 @@ const LandingPage = () => {
   }, []);
 
   return (
-      <div>
-      
+      <div style={{ top: '0'}}>
         <Background1 style={{ backgroundImage: `url(${homeBackground})`, height: '100vh' }}>
-          <Navbar
-            sx={{ 
-              position: 'fixed', 
-              top:'0', width:'100%', 
-              zIndex:'100%', 
-              backgroundColor:'rgba(0,0,0,0.8)',}}
-          >
-          </Navbar>
+          
             <ThemeProvider theme={themeH1MiddleTypo}>
               <Typography 
                 sx={{ 
                 display: {  xs: 'none', md: 'flex' }, 
                 fontSize: '72px',
                 flexGrow: 1, 
-                marginTop: '150px',
+                // marginTop: '150px',
                 textAlign: 'center',
                 }}
               >
@@ -113,7 +108,6 @@ const LandingPage = () => {
               fontSize: '56px',
               display: { xs: 'flex', md: 'none' }, 
               flexGrow: 1,
-              marginTop: '150px',
               height: 'auto',
               textAlign: 'center',
               }}
