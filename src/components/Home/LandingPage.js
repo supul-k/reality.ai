@@ -16,6 +16,10 @@ const Background1 = styled('div')({
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
 });
 
 const themeH1MiddleTypo = createTheme({
@@ -30,7 +34,7 @@ const themeH1MiddleTypo = createTheme({
           flexDirection: 'row',
           justifyContent: 'center',
           alignItems: 'center',
-          height: '100vh',
+          // height: '100vh',
         },
       },
     },
@@ -49,7 +53,7 @@ const themeH1MiddleTypoSM = createTheme({
           flexDirection: 'row',
           justifyContent: 'center',
           alignItems: 'center',
-          height: '100vh',
+          // height: '100vh',
         },
       },
     },
@@ -70,67 +74,69 @@ const LandingPage = () => {
   return (
       <div style={{ top: '0'}}>
         <Background1 style={{ backgroundImage: `url(${homeBackground})`, height: '100vh' }}>
-          
             <ThemeProvider theme={themeH1MiddleTypo}>
+              <div>
+                <Typography 
+                  sx={{ 
+                  display: {  xs: 'none', md: 'flex' }, 
+                  fontSize: '72px',
+                  flexGrow: 1,
+                  textAlign: 'center',
+                  }}
+                >
+                  BEYOND THE REALITY
+                </Typography>
+                <Typography
+                    variant="h6"
+                    noWrap
+                    component="a"
+                    href="/"
+                    id="landing-subtitle"
+                    sx={{
+                    display: {  xs: 'none', md: 'flex' }, 
+                    fontSize: '48px',
+                    letterSpacing: '.3rem',
+                    textDecoration: 'none',
+                    color: 'white',
+                    }}
+                >
+                  <span style={{ color: 'cyan' }}>the</span>Reality
+                  <span style={{ color: 'cyan' }}>.</span>ai
+                </Typography>
+              </div>
+          </ThemeProvider>
+
+          <ThemeProvider theme={themeH1MiddleTypoSM}>
+            <div>
               <Typography 
                 sx={{ 
-                display: {  xs: 'none', md: 'flex' }, 
-                fontSize: '72px',
-                flexGrow: 1, 
-                // marginTop: '150px',
+                fontSize: '56px',
+                display: { xs: 'flex', md: 'none' }, 
+                flexGrow: 1,
+                height: 'auto',
                 textAlign: 'center',
                 }}
               >
-                BEYOND THE REALITY
-            </Typography>
-            <Typography
+                  BEYOND THE REALITY
+              </Typography>
+              <Typography
                 variant="h6"
                 noWrap
                 component="a"
                 href="/"
-                id="landing-subtitle"
                 sx={{
-                display: {  xs: 'none', md: 'flex' }, 
-                fontSize: '48px',
+                display: { xs: 'flex', md: 'none' }, 
+                fontSize: '32px',
+                fontWeight: 700,
                 letterSpacing: '.3rem',
                 textDecoration: 'none',
                 color: 'white',
                 }}
-            >
+              >
                 <span style={{ color: 'cyan' }}>the</span>Reality
                 <span style={{ color: 'cyan' }}>.</span>ai
-            </Typography>
-          </ThemeProvider>
-
-          <ThemeProvider theme={themeH1MiddleTypoSM}>
-            <Typography 
-              sx={{ 
-              fontSize: '56px',
-              display: { xs: 'flex', md: 'none' }, 
-              flexGrow: 1,
-              height: 'auto',
-              textAlign: 'center',
-              }}
-            >
-                BEYOND THE REALITY
-            </Typography>
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-              display: { xs: 'flex', md: 'none' }, 
-              fontSize: '32px',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              textDecoration: 'none',
-              color: 'white',
-              }}
-            >
-              <span style={{ color: 'cyan' }}>the</span>Reality
-              <span style={{ color: 'cyan' }}>.</span>ai
-            </Typography>
+              </Typography>
+            </div>
           </ThemeProvider>
         </Background1>
       </div>
