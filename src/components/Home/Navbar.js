@@ -31,7 +31,7 @@ const themeNavbar = createTheme({
     },
 });
 
-const Navbar = () => {
+const Navbar = ({ visible  }) => {
 
     const [anchorElNav, setAnchorElNav] = useState(null);
   
@@ -45,7 +45,7 @@ const Navbar = () => {
 
     return (
         <ThemeProvider theme={themeNavbar}>
-            <AppBar position="static">
+            <AppBar position="fixed" style={{ transform: `translateY(${visible ? '0' : '-100%'})`, transition: 'transform 0.3s' }}>
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
                         {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
