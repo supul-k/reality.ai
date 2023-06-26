@@ -39,8 +39,11 @@ const Navbar = ({ visible  }) => {
       setAnchorElNav(event.currentTarget);
     };
   
-    const handleCloseNavMenu = () => {
-      setAnchorElNav(null);
+    const handleCloseNavMenu = (page) => {
+        if (page === 'Services') {
+            const servicesHome = document.getElementById('services-home');
+            servicesHome.scrollIntoView({ behavior: 'smooth' });
+        }
     };
 
     return (
@@ -48,7 +51,6 @@ const Navbar = ({ visible  }) => {
             <AppBar position="fixed" style={{ transform: `translateY(${visible ? '0' : '-100%'})`, transition: 'transform 0.3s' }}>
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
-                        {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
                         <Typography
                                 variant="h6"
                                 noWrap
@@ -98,13 +100,12 @@ const Navbar = ({ visible  }) => {
                                 }}
                             >
                                 {pages.map((page) => (
-                                    <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                    <MenuItem key={page} onClick={() => handleCloseNavMenu(page)}>
+                                        <Typography textAlign="center">{page}</Typography>
                                     </MenuItem>
                                 ))}
                             </Menu>
                         </Box>
-                        {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
                         <Typography
                             variant="h5"
                             noWrap
@@ -128,7 +129,7 @@ const Navbar = ({ visible  }) => {
                             {pages.map((page) => (
                             <Button
                                 key={page}
-                                onClick={handleCloseNavMenu}
+                                onClick={() => handleCloseNavMenu(page)}
                                 className="hover-effect-navbar"
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >

@@ -1,11 +1,17 @@
-import React , { useEffect } from 'react';
-import { styled  } from '@mui/system';
-import homeBackground from '../../assets/home_background.jpg';
+import React from 'react';
+import { styled } from '@mui/system';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { createTheme, ThemeProvider } from '@mui/material/styles'
+
+import homeBackground from '../../assets/services_background.jpg';
+import softwareSolutions from '../../assets/software_solutions.png';
+import AIsolutions from '../../assets/ai_solutions.png';
+import RoboticsSolutions from '../../assets/roboticsSolutions.jpg';
 
 const Background1 = styled('div')({
-  // position: 'fixed',
   top: 0,
   left: 0,
   height: '100vh',
@@ -14,131 +20,120 @@ const Background1 = styled('div')({
   maxHeight: '100%',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'center',
   display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
+  justifyContent: 'space-evenly',
   alignItems: 'center',
 });
 
-const themeH1MiddleTypo = createTheme({
-  components: {
-    MuiTypography: {
-      styleOverrides: {
-        root: {
-          mr: 2,
-          color: 'white',
-          fontWeight: '700',
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'center',
-          alignItems: 'center',
-          // height: '100vh',
-        },
-      },
-    },
-  },
+const CardContainer = styled('div')({
+  backgroundPosition: 'center',
+  display: 'flex',
+  width: '90%',
+  justifyContent: 'space-around',
+  alignItems: 'center',
 });
 
-const themeH1MiddleTypoSM = createTheme({
-  components: {
-    MuiTypography: {
-      styleOverrides: {
-        root: {
-          mr: 2,
-          color: 'white',
-          fontWeight: '700',
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'center',
-          alignItems: 'center',
-          // height: '100vh',
-        },
-      },
-    },
+const Card = styled('div')({
+  margin: '20px',
+  width: '30vw',
+  height: '80vh',
+  background: 'white',
+  borderRadius: '10px',
+  boxShadow: '0 2px 5px rgba(0, 0, 0, 0.2)',
+  transition: 'transform 0.3s ease',
+  display: 'grid',
+  justifyContent: 'center',
+  alignItems: 'center',
+  cursor: 'pointer',
+  '&:hover': {
+    transform: 'translateY(-10px)',
   },
 });
 
 const ServicesHome = () => {
-
-  useEffect(() => {
-    const landingSubtitle = document.getElementById('landing-subtitle');
-    if (landingSubtitle) {
-      landingSubtitle.classList.add('slide-up-animation');
-    }
-  }, []);
-
   return (
-      <div style={{ top: '0'}}>
-        <Background1 style={{ backgroundImage: `url(${homeBackground})`, height: '100vh' }}>
-            <ThemeProvider theme={themeH1MiddleTypo}>
-              <div>
-                <Typography 
-                  sx={{ 
-                  display: {  xs: 'none', md: 'flex' }, 
-                  fontSize: '72px',
-                  flexGrow: 1,
-                  textAlign: 'center',
-                  }}
-                >
-                  BEYOND THE REALITY
-                </Typography>
-                <Typography
-                    variant="h6"
-                    noWrap
-                    component="a"
-                    href="/"
-                    id="landing-subtitle"
-                    sx={{
-                    display: {  xs: 'none', md: 'flex' }, 
-                    fontSize: '48px',
-                    letterSpacing: '.3rem',
-                    textDecoration: 'none',
-                    color: 'white',
-                    }}
-                >
-                  <span style={{ color: 'cyan' }}>the</span>Reality
-                  <span style={{ color: 'cyan' }}>.</span>ai
-                </Typography>
-              </div>
-          </ThemeProvider>
-
-          <ThemeProvider theme={themeH1MiddleTypoSM}>
-            <div>
-              <Typography 
-                sx={{ 
-                fontSize: '56px',
-                display: { xs: 'flex', md: 'none' }, 
-                flexGrow: 1,
-                height: 'auto',
-                textAlign: 'center',
-                }}
-              >
-                  BEYOND THE REALITY
+    <div style={{ top: '0' }}>
+      <Background1 style={{ backgroundImage: `url(${homeBackground})`, height: '100vh' }}>
+        <CardContainer >
+          <Card>
+            <CardMedia
+              component="img"
+              src={softwareSolutions}
+              title="Green Iguana"
+              sx={{ 
+                height:'100%' , 
+                backgroundSize:'cover', 
+                borderRadius:'10px 10px 0 0'
+              }}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div" color="text.primary">
+                Software Solutions
               </Typography>
-              <Typography
-                variant="h6"
-                noWrap
-                component="a"
-                href="/"
-                sx={{
-                display: { xs: 'flex', md: 'none' }, 
-                fontSize: '32px',
-                fontWeight: 700,
-                letterSpacing: '.3rem',
-                textDecoration: 'none',
-                color: 'white',
-                }}
-              >
-                <span style={{ color: 'cyan' }}>the</span>Reality
-                <span style={{ color: 'cyan' }}>.</span>ai
+              <Typography variant="body2" color="text.secondary">
+                Lizards are a widespread group of squamate reptiles, with over 6,000
+                species, ranging across all continents except Antarctica
               </Typography>
-            </div>
-          </ThemeProvider>
-        </Background1>
-      </div>
+            </CardContent>
+            <CardActions>
+              <Button size="small">Share</Button>
+              <Button size="small">Learn More</Button>
+            </CardActions>
+          </Card>
+          <Card>
+            <CardMedia
+              component="img"
+              src={AIsolutions}
+              title="Green Iguana"
+              sx={{ 
+                height:'100%' , 
+                backgroundSize:'cover', 
+                borderRadius:'10px 10px 0 0'
+              }}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div" color="text.primary">
+                AI Solutions
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Lizards are a widespread group of squamate reptiles, with over 6,000
+                species, ranging across all continents except Antarctica
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="small">Share</Button>
+              <Button size="small">Learn More</Button>
+            </CardActions>
+          </Card>
+          <Card>
+            <CardMedia
+              component="img"
+              src={RoboticsSolutions}
+              title="Green Iguana"
+              sx={{ 
+                height:'100%' , 
+                backgroundSize:'cover', 
+                borderRadius:'10px 10px 0 0'
+              }}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div" color="text.primary">
+                Robotics Solutions
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Lizards are a widespread group of squamate reptiles, with over 6,000
+                species, ranging across all continents except Antarctica
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="small">Share</Button>
+              <Button size="small">Learn More</Button>
+            </CardActions>
+          </Card>
+        </CardContainer>
+      </Background1>
+    </div>
   );
 };
 
 export default ServicesHome;
-
