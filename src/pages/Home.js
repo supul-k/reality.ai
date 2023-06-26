@@ -34,7 +34,7 @@ const Home = () => {
     <div>
       <Navbar visible={visible} />
       <LandingPage />
-        <ServicesHome />
+      <ServicesHome />
     </div>
   );
 };

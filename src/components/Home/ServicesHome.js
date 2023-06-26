@@ -7,6 +7,9 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 import homeBackground from '../../assets/services_background.jpg';
+import softwareSolutions from '../../assets/software_solutions.png';
+import AIsolutions from '../../assets/ai_solutions.png';
+import RoboticsSolutions from '../../assets/roboticsSolutions.jpg';
 
 const Background1 = styled('div')({
   top: 0,
@@ -33,12 +36,12 @@ const CardContainer = styled('div')({
 const Card = styled('div')({
   margin: '20px',
   width: '30vw',
-  height: '85vh',
+  height: '80vh',
   background: 'white',
   borderRadius: '10px',
   boxShadow: '0 2px 5px rgba(0, 0, 0, 0.2)',
   transition: 'transform 0.3s ease',
-  display: 'flex',
+  display: 'grid',
   justifyContent: 'center',
   alignItems: 'center',
   cursor: 'pointer',
@@ -54,12 +57,18 @@ const ServicesHome = () => {
         <CardContainer >
           <Card>
             <CardMedia
-              src='../assets/services_background.jpg'
-              title="green iguana"
+              component="img"
+              src={softwareSolutions}
+              title="Green Iguana"
+              sx={{ 
+                height:'100%' , 
+                backgroundSize:'cover', 
+                borderRadius:'10px 10px 0 0'
+              }}
             />
             <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Lizard
+              <Typography gutterBottom variant="h5" component="div" color="text.primary">
+                Software Solutions
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 Lizards are a widespread group of squamate reptiles, with over 6,000
@@ -71,8 +80,56 @@ const ServicesHome = () => {
               <Button size="small">Learn More</Button>
             </CardActions>
           </Card>
-          <Card>Card 2</Card>
-          <Card>Card 3</Card>
+          <Card>
+            <CardMedia
+              component="img"
+              src={AIsolutions}
+              title="Green Iguana"
+              sx={{ 
+                height:'100%' , 
+                backgroundSize:'cover', 
+                borderRadius:'10px 10px 0 0'
+              }}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div" color="text.primary">
+                AI Solutions
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Lizards are a widespread group of squamate reptiles, with over 6,000
+                species, ranging across all continents except Antarctica
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="small">Share</Button>
+              <Button size="small">Learn More</Button>
+            </CardActions>
+          </Card>
+          <Card>
+            <CardMedia
+              component="img"
+              src={RoboticsSolutions}
+              title="Green Iguana"
+              sx={{ 
+                height:'100%' , 
+                backgroundSize:'cover', 
+                borderRadius:'10px 10px 0 0'
+              }}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div" color="text.primary">
+                Robotics Solutions
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Lizards are a widespread group of squamate reptiles, with over 6,000
+                species, ranging across all continents except Antarctica
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="small">Share</Button>
+              <Button size="small">Learn More</Button>
+            </CardActions>
+          </Card>
         </CardContainer>
       </Background1>
     </div>
