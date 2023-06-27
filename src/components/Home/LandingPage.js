@@ -65,10 +65,18 @@ const themeH1MiddleTypoSM = createTheme({
 const LandingPage = () => {
 
   useEffect(() => {
-    const landingSubtitle = document.getElementById('landing-subtitle');
-    if (landingSubtitle) {
-      landingSubtitle.classList.add('slide-up-animation');
-    }
+    const handleLoad = ()  => {
+      const landingSubtitle = document.getElementById('landing-subtitle');
+      if (landingSubtitle) {
+        landingSubtitle.classList.add('slide-up-animation');
+      }
+    };
+
+    window.onload = handleLoad;
+
+    return () => {
+      window.onload = null;
+    };
   }, []);
 
   return (
@@ -124,6 +132,7 @@ const LandingPage = () => {
                 noWrap
                 component="a"
                 href="/"
+                id="landing-subtitle"
                 sx={{
                 display: { xs: 'flex', md: 'none' }, 
                 fontSize: '32px',
