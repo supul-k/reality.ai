@@ -29,7 +29,7 @@ const CardContainer = styled('div')({
   backgroundPosition: 'center',
   display: 'flex',
   width: '90%',
-  justifyContent: 'space-around',
+  justifyContent: 'space-evenly',
   alignItems: 'center',
 });
 
